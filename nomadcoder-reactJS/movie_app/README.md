@@ -175,3 +175,39 @@ Potato를 위와 같이 추가하면 브라우저에는 다음과 같이 출력�
 ```
 
 ### Reusable Components with JSX + Props
+jsx에서 두번째로 이해해야하는 것은, **component에 정보를 보낼 수 있다는 것이다.**    
+이전에 작업했던 Potato에 관현 것은 다 지우자..    
+
+`App.js`를 다음과 같이 변경하자
+```JavaScript
+// App.js
+import React from 'react';
+
+function Food(props) {
+    console.log(props)
+    return <h1>I like {props.fav}</h1>
+}
+
+function App() {
+  return (
+    <div>
+        <h1>Hello!!!</h1>
+        <Food fav="kimchi" />
+        <Food fav="rame" />
+        <Food fav="chukumi" />
+    </div>
+  );
+}
+
+export default App;
+```    
+    
+콘솔에는 
+```cmd
+{fav: "chukumi"}
+```
+이렇게 찍힌다.    
+
+이정도면 어떻게 프로퍼티를 전달하는지 알 수 있다고 생각..
+
+

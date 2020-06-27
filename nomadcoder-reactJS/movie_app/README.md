@@ -161,6 +161,7 @@ function App() {
 export default App;
 ```
 Potato를 위와 같이 추가하면 브라우저에는 다음과 같이 출력된다.
+
 ```html
 // index.html
 <body>
@@ -211,3 +212,137 @@ export default App;
 이정도면 어떻게 프로퍼티를 전달하는지 알 수 있다고 생각..
 
 
+### Dynamic Component Generation
+`App.js` 코드가 조금 안이쁜거 같아서 다듬어보자
+참고로 jsx에 `{}`안에 들어가는 것은 JavaScript이다.
+```JavaScript
+// App.js
+import React from 'react';
+
+function Food({name, picture}) {
+    console.log(name)
+    return <div>
+        <h2>I like {name}</h2>
+        <img src={picture}/>
+    </div> 
+
+}
+
+const foodILike = [
+  {
+    name: "Kimchi",
+    image:
+      "http://aeriskitchen.com/wp-content/uploads/2008/09/kimchi_bokkeumbap_02-.jpg"
+  },
+  {
+    name: "Samgyeopsal",
+    image:
+      "https://3.bp.blogspot.com/-hKwIBxIVcQw/WfsewX3fhJI/AAAAAAAAALk/yHxnxFXcfx4ZKSfHS_RQNKjw3bAC03AnACLcBGAs/s400/DSC07624.jpg"
+  },
+  {
+    name: "Bibimbap",
+    image:
+      "http://cdn-image.myrecipes.com/sites/default/files/styles/4_3_horizontal_-_1200x900/public/image/recipes/ck/12/03/bibimbop-ck-x.jpg?itok=RoXlp6Xb"
+  },
+  {
+    name: "Doncasu",
+    image:
+      "https://s3-media3.fl.yelpcdn.com/bphoto/7F9eTTQ_yxaWIRytAu5feA/ls.jpg"
+  },
+  {
+    name: "Kimbap",
+    image:
+      "http://cdn2.koreanbapsang.com/wp-content/uploads/2012/05/DSC_1238r-e1454170512295.jpg"
+  }
+];
+
+
+function App() {
+  return (
+    <div>
+        <h1>Hello!!!</h1>
+        {foodILike.map(dish => {
+            return <Food name={dish.name} picture={dish.image} />
+        })}
+    </div>
+  );
+}
+
+export default App;
+```
+
+### map Recap
+크롬 콘솔에 다음과 같은 에러가 뜬다.
+```
+index.js:1 Warning: Each child in a list should have a unique "key" prop.
+
+Check the render method of `App`. See https://fb.me/react-warning-keys for more information.
+    in Food (at App.js:50)
+    in App (at src/index.js:6)
+```
+react에서는 모든 element들을 다 다르게 보여야 할 필요가 있다. 
+그래서 'key'를 프로프티에 추가하라고 하는 것이다.  
+
+App.js인데 다음과 같이 변경하면 된다.
+```JavaScript
+import React from 'react';
+
+const foodILike = [
+  {
+    id : 1,
+    name: "Kimchi",
+    image:
+      "http://aeriskitchen.com/wp-content/uploads/2008/09/kimchi_bokkeumbap_02-.jpg"
+  },
+  {
+    id : 2,
+    name: "Samgyeopsal",
+    image:
+      "https://3.bp.blogspot.com/-hKwIBxIVcQw/WfsewX3fhJI/AAAAAAAAALk/yHxnxFXcfx4ZKSfHS_RQNKjw3bAC03AnACLcBGAs/s400/DSC07624.jpg"
+  },
+  {
+    id : 3,
+    name: "Bibimbap",
+    image:
+      "http://cdn-image.myrecipes.com/sites/default/files/styles/4_3_horizontal_-_1200x900/public/image/recipes/ck/12/03/bibimbop-ck-x.jpg?itok=RoXlp6Xb"
+  },
+  {
+    id : 4,
+    name: "Doncasu",
+    image:
+      "https://s3-media3.fl.yelpcdn.com/bphoto/7F9eTTQ_yxaWIRytAu5feA/ls.jpg"
+  },
+  {
+    id : 5,
+    name: "Kimbap",
+    image:
+      "http://cdn2.koreanbapsang.com/wp-content/uploads/2012/05/DSC_1238r-e1454170512295.jpg"
+  }
+];
+
+function Food({name, picture}) {
+    console.log(name)
+    return <div>
+        <h2>I like {name}</h2>
+        <img src={picture} alt={name} />
+    </div> 
+}
+
+
+function App() {
+  return (
+    <div>
+        {foodILike.map(dish => {
+            return <Food key={dish.id} name={dish.name} picture={dish.image} />
+        })}
+    </div>
+  );
+}
+
+export default App;
+```
+
+우리가 `key`라는 프로프티를 사용하지 않아도 react내부적으로 사용하기 위해서 필요하다.
+
+### Protection with PropTypes
+지금은 

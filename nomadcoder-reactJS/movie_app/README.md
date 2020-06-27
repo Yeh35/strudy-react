@@ -345,4 +345,18 @@ export default App;
 우리가 `key`라는 프로프티를 사용하지 않아도 react내부적으로 사용하기 위해서 필요하다.
 
 ### Protection with PropTypes
-지금은 
+지금까지는 Component에 값이 제대로 안넘어와도 에러를 발생시키지 않았다.
+(화면에 이상하게 나오기는 하지만..)
+
+필요한 props가 전달되지 않으면 에러를 발생시키는 것을 해보려고한다.      
+먼저 `npm i prop-types`를 콘솔에 입력해 type을 체크해주는 라이브러리를 받자
+
+그다음 import `import PropTypes from 'prop-types';` 하고     
+다음과 같이 체크해야하는 값을 넣어주면 된다.
+```JavaScript
+Food.propTypes = {
+    name: PropTypes.string.isRequired,
+    picture: PropTypes.string.isRequired,
+    rating: PropTypes.number
+```
+'isRequired'가 있고 없고의 차이는 undefined를 허용하냐 안하냐의 차이이다.   

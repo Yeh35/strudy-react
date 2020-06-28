@@ -334,7 +334,7 @@ function App() {
     <div>
         {foodILike.map(dish => {
             return <Food key={dish.id} name={dish.name} picture={dish.image} />
-        })}
+        })}key
     </div>
   );
 }
@@ -487,4 +487,14 @@ export default App;
 
 ### MAKING THE MOVIE APP
 이제부터 본격적으로 Movie App을 만든다.
-먼저 `npm i axios`를 cmd 창에 입력하여 axios를 받자   
+여기부터는 강의를 따라서...
+
+`npm i axios`를 cmd 창에 입력하여 axios를 받자  
+axios는 http 호출을 할 때 사용된다.    
+
+css 적용시킬때는 JavaScript방식으로 
+`<h3 class="movie__title" style={{backgroundColor: "red"}}>{title}</h3>`
+style을 직접 정해줘도 되지만 그것보다는 **css 파일을 만들고 `import "./Movie.css"` import하는게 더 깔끔하다.** 
+
+
+

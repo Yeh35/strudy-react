@@ -360,3 +360,72 @@ Food.propTypes = {
     rating: PropTypes.number
 ```
 'isRequired'가 있고 없고의 차이는 undefined를 허용하냐 안하냐의 차이이다.   
+
+### Class Components and State
+기존에 우리가 했던 만들었던 `function App`을 Function Components라고 부른다.   
+이제 그걸 Class Component로 바꿀것이다.
+간단하게 다음과 같이 `App.js`를 변경해보자
+```JavaScript
+import React from 'react';
+import PropTypes from 'prop-types';
+
+class App extends React.Component {
+    state = {
+        count: 0
+    };
+    add = () => {
+        console.log("add");
+    };
+    minus = () => {
+        console.log("minus");
+    };
+    render() {
+        return <div>
+            <h1>The number is: {this.state.count}</h1>
+            <button onClick={this.add}>Add</button>
+            <button onClick={this.minus}>Minuss</button>
+        </div>;
+    }
+}
+
+export default App;
+```
+
+react는 React.Component를 상속 받았을 때 기본적으로 `render` 메소드를 실행하도록 되어 있다.
+Function Component이 render 메소드와 동일하다고 할 수 있다.   
+
+왜? Class Component를 사용하냐고 묻는다면 React.Component를 상속받기에 React가 제공하는 기능들을 가져다가 쓸 수 있고 하나로 묶여야 하는 OOP관점에서 코딩할 수 있다.
+
+배우면서 의문인 점이 버튼에 이벤트를 줄때 `this.add`로 하면 클릭할때만 이벤트가 적용되고
+`this.add()`를 하면 페이지를 실행하면 바로 실행된다.    
+왜 그래야하는지 납득이 되지는 않는다.
+
+그럼 이제 state에 지정된 값을 변경하면 되는 것일까?
+여기서 중요한게 `this.state.count += 1`같이 **직접 state를 변경하면 안된다.**   
+시도해도 콘솔창에 경고 메시지만 뜰것이다.    
+
+`setState`를 메소드를 사용해야지만 react가 변경을 알아채고 `render`메소드를 실행시켜준다.
+그러면 VisualDOM이 화면에서 변경된 부분만 업데이트를 한게된다.
+
+```JavaScript
+add = () => {
+    this.setState({ count: this.state.count + 1 });
+};
+minus = () => {
+    this.setState({ count: this.state.count - 1 });
+};
+```
+하지만 이 코드에서도 바꿔야 해야하는 것이 있다.   
+바로 `this.state.count` state를 바로 가져다 쓴 부분이다.   
+코딩을 할때 함수내에서 변수로 받을 수 있는데 전역변수를 가져다 쓰는 것은 좋은 방법이 아니다.    
+
+```JavaScript
+add = () => {
+    this.setState(current => ({ count: current.count + 1 }));
+};
+minus = () => {
+    this.setState(current => ({ count: current.count - 1 }));
+};
+```
+이런식으로 state를 current라는 매게변수로 받을 수 있다.   
+  

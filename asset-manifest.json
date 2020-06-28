@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/strudy-react/nomadcoder-reactJS/static/css/main.ae4cfe19.chunk.css",
+    "main.js": "/strudy-react/nomadcoder-reactJS/static/js/main.37cdd098.chunk.js",
+    "main.js.map": "/strudy-react/nomadcoder-reactJS/static/js/main.37cdd098.chunk.js.map",
+    "runtime-main.js": "/strudy-react/nomadcoder-reactJS/static/js/runtime-main.66a3e803.js",
+    "runtime-main.js.map": "/strudy-react/nomadcoder-reactJS/static/js/runtime-main.66a3e803.js.map",
+    "static/js/2.ce898f91.chunk.js": "/strudy-react/nomadcoder-reactJS/static/js/2.ce898f91.chunk.js",
+    "static/js/2.ce898f91.chunk.js.map": "/strudy-react/nomadcoder-reactJS/static/js/2.ce898f91.chunk.js.map",
+    "index.html": "/strudy-react/nomadcoder-reactJS/index.html",
+    "precache-manifest.fac134b7c174ad39914dd67f5490ef95.js": "/strudy-react/nomadcoder-reactJS/precache-manifest.fac134b7c174ad39914dd67f5490ef95.js",
+    "service-worker.js": "/strudy-react/nomadcoder-reactJS/service-worker.js",
+    "static/css/main.ae4cfe19.chunk.css.map": "/strudy-react/nomadcoder-reactJS/static/css/main.ae4cfe19.chunk.css.map",
+    "static/js/2.ce898f91.chunk.js.LICENSE.txt": "/strudy-react/nomadcoder-reactJS/static/js/2.ce898f91.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.66a3e803.js",
+    "static/js/2.ce898f91.chunk.js",
+    "static/css/main.ae4cfe19.chunk.css",
+    "static/js/main.37cdd098.chunk.js"
+  ]
+}

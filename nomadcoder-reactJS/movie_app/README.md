@@ -485,3 +485,6 @@ export default App;
 
 다음강의를 위해서 다시 `App.js`을 돌려놓자.
 
+### MAKING THE MOVIE APP
+이제부터 본격적으로 Movie App을 만든다.
+먼저 `npm i axios`를 cmd 창에 입력하여 axios를 받자   

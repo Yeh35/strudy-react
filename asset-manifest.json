@@ -1,20 +1,20 @@
 {
   "files": {
-    "main.css": "/strudy-react/static/css/main.ae4cfe19.chunk.css",
-    "main.js": "/strudy-react/static/js/main.37cdd098.chunk.js",
-    "main.js.map": "/strudy-react/static/js/main.37cdd098.chunk.js.map",
-    "runtime-main.js": "/strudy-react/static/js/runtime-main.2fea1925.js",
-    "runtime-main.js.map": "/strudy-react/static/js/runtime-main.2fea1925.js.map",
-    "static/js/2.ce898f91.chunk.js": "/strudy-react/static/js/2.ce898f91.chunk.js",
-    "static/js/2.ce898f91.chunk.js.map": "/strudy-react/static/js/2.ce898f91.chunk.js.map",
-    "index.html": "/strudy-react/index.html",
-    "precache-manifest.aa590eaeea14577827f2077544cb77d7.js": "/strudy-react/precache-manifest.aa590eaeea14577827f2077544cb77d7.js",
-    "service-worker.js": "/strudy-react/service-worker.js",
-    "static/css/main.ae4cfe19.chunk.css.map": "/strudy-react/static/css/main.ae4cfe19.chunk.css.map",
-    "static/js/2.ce898f91.chunk.js.LICENSE.txt": "/strudy-react/static/js/2.ce898f91.chunk.js.LICENSE.txt"
+    "main.css": "/strudy-react/nomadcoder-reactJS/movie_app/static/css/main.ae4cfe19.chunk.css",
+    "main.js": "/strudy-react/nomadcoder-reactJS/movie_app/static/js/main.37cdd098.chunk.js",
+    "main.js.map": "/strudy-react/nomadcoder-reactJS/movie_app/static/js/main.37cdd098.chunk.js.map",
+    "runtime-main.js": "/strudy-react/nomadcoder-reactJS/movie_app/static/js/runtime-main.6dacc3c6.js",
+    "runtime-main.js.map": "/strudy-react/nomadcoder-reactJS/movie_app/static/js/runtime-main.6dacc3c6.js.map",
+    "static/js/2.ce898f91.chunk.js": "/strudy-react/nomadcoder-reactJS/movie_app/static/js/2.ce898f91.chunk.js",
+    "static/js/2.ce898f91.chunk.js.map": "/strudy-react/nomadcoder-reactJS/movie_app/static/js/2.ce898f91.chunk.js.map",
+    "index.html": "/strudy-react/nomadcoder-reactJS/movie_app/index.html",
+    "precache-manifest.90a784263d845fcb254feb1ad843a3aa.js": "/strudy-react/nomadcoder-reactJS/movie_app/precache-manifest.90a784263d845fcb254feb1ad843a3aa.js",
+    "service-worker.js": "/strudy-react/nomadcoder-reactJS/movie_app/service-worker.js",
+    "static/css/main.ae4cfe19.chunk.css.map": "/strudy-react/nomadcoder-reactJS/movie_app/static/css/main.ae4cfe19.chunk.css.map",
+    "static/js/2.ce898f91.chunk.js.LICENSE.txt": "/strudy-react/nomadcoder-reactJS/movie_app/static/js/2.ce898f91.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.2fea1925.js",
+    "static/js/runtime-main.6dacc3c6.js",
     "static/js/2.ce898f91.chunk.js",
     "static/css/main.ae4cfe19.chunk.css",
     "static/js/main.37cdd098.chunk.js"

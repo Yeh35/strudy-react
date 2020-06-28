@@ -497,5 +497,6 @@ css 적용시킬때는 JavaScript방식으로
 style을 직접 정해줘도 되지만 그것보다는 **css 파일을 만들고 `import "./Movie.css"` import하는게 더 깔끔하다.** 
 
 
-
+`npm i gh-pages` 
+gh-pages는 이렇게 만든 App을 Github에 Static 페이지로 띄우는 걸 도와준다.
 

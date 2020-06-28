@@ -428,4 +428,60 @@ minus = () => {
 };
 ```
 이런식으로 state를 current라는 매게변수로 받을 수 있다.   
-  
+
+
+### Component Life Cycle
+Componect에는 Life Cycle이라는게 존재한다.    
+Life Cycle은 아주 대에에충 설명하면 create -> update -> remove 이런식으로 Componect가 생성되고 사라지는 순서를 나타내는 것을 말한다. 각 단계마다 callback 메소드가 있고 그걸 정의하면 라이프 사이클에 참여할 수 있게 되는 것이다.   
+모든 Life Cycle 메소드를 보지는 않을 것이지만 궁금하다면 
+여기(https://ko.reactjs.org/docs/react-component.html)를 들어가보면 된다.    
+
+주요하게볼 Life Cycle 메소드는 다음과 같다.
+* mounting (태어나는 것)
+* updating (업데이트)
+* unmounting (죽는것)
+
+`App.js` 소스인데 `constructor`같이 잘 모르는 메소드가 많이 생겼다.  
+위에 링크를 들어가보면 Life Cycle 마다 메소드가 호출되는 순서를 알려준다.
+```JavaScript
+import React from 'react';
+import PropTypes from 'prop-types';
+
+class App extends React.Component {
+    state = {
+        count: 0
+    };
+    constructor(props) {
+        super(props);
+        console.log("hello");
+    };
+    componentDidMount() {
+        console.log("Mounted");
+    };
+    componentDidUpdate() {
+        console.log("updated");
+    };
+    componentWillUnmount() {
+        console.log("good bye App");
+    }
+    add = () => {
+        this.setState(current => ({ count: current.count + 1 }));
+    };
+    minus = () => {
+        this.setState(current => ({ count: current.count - 1 }));
+    };
+    render() {
+        console.log("render");
+        return <div>
+            <h1>The number is: {this.state.count}</h1>
+            <button onClick={this.add}>Add</button>
+            <button onClick={this.minus}>Minuss</button>
+        </div>;
+    }
+}
+
+export default App;
+```
+
+다음강의를 위해서 다시 `App.js`을 돌려놓자.
+

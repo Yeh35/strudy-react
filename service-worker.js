@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/strudy-react/nomadcoder-reactJS/movie_app/precache-manifest.90a784263d845fcb254feb1ad843a3aa.js"
+  "/strudy-react/nomadcoder-reactJS/movie_app/precache-manifest.f369dd96c4ae36e8c86b50883999fbda.js"
 );
 
 self.addEventListener('message', (event) => {

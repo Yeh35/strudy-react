@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "4266a4b2567a099877683aa052083ae5",
+    "revision": "fee2b23d4df1e4187edb2a1e8dffe2ab",
     "url": "/strudy-react/nomadcoder-reactJS/movie_app/index.html"
   },
   {
